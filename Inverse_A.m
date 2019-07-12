@@ -22,6 +22,7 @@ E
 T=[A E]
 %% 
 
+%Get a upper triangle matrix from the temporary matrix.
 for k=1:m
 if T(k,k)==0
 for i=k:m
@@ -87,6 +88,8 @@ for j=m:2*m
 end
 T
 %%
+
+%Get the identity matrix.
 for i=m-1:-1:1
     for k=i+1:m
         l=k;
