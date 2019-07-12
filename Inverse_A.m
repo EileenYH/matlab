@@ -1,15 +1,13 @@
-A=[2 3 4 5 6;0 0 0 0 1;1 0 0 0 0;3 3 3 3 3;7 8 6 0 1];
+A=input('Matrix A')
 %Build a Temp_Matrix:T=[A E], and E=A*inverse(A).
 [m,n]=size(A);
 if m~=n
     fprintf('Not a square matrix')
 else
     if det(A)==0
-        fprintf('A singular matrix')
-    end
-end
-        
-for r=1:m
+        fprintf('A is a singular matrix')
+    else
+        for r=1:m
 for c=1:n
 if r==c
 E(r,c)=1;
@@ -22,7 +20,6 @@ E
 T=[A E]
 %% 
 
-%Get a upper triangle matrix from the temporary matrix.
 for k=1:m
 if T(k,k)==0
 for i=k:m
@@ -88,8 +85,6 @@ for j=m:2*m
 end
 T
 %%
-
-%Get the identity matrix.
 for i=m-1:-1:1
     for k=i+1:m
         l=k;
@@ -108,3 +103,5 @@ for i=1:m
     end
 
 inverse_A
+    end
+end
