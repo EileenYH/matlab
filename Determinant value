@@ -1,0 +1,6 @@
+%After getting the upper triangular
+dete_A=1;
+for i=1:m
+dete_A=dete_A*T(i,i);
+end
+fprintf('Determinant value of A is %d\n',dete_A)
